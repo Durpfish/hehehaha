@@ -2,6 +2,7 @@ import React from 'react';
 import { Table, Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import './history.css';
+import { sampleDevicesColumns, sampleMedicalHistory } from './data';
 
 const History = () => {
   const navigate = useNavigate();
@@ -10,46 +11,9 @@ const History = () => {
     navigate('/HomePage');
   }
 
-  // TODO add backend
-  const medicalHistory = [
-    {
-      key: '1',
-      date: '2024-05-31',
-      time: '10:00 AM',
-      type: 'X-Ray',
-      doctorName: 'Dr. Tiew',
-      hospitalName: 'Changi General Hospital',
-    },
-    {
-      key: '2',
-      date: '2024-05-30',
-      time: '11:30 AM',
-      type: 'Blood Test',
-      doctorName: 'Dr. Koey',
-      hospitalName: 'Tan Tock Seng General Hospital',
-    },
-    {
-      key: '3',
-      date: '2024-05-29',
-      time: '09:45 AM',
-      type: 'MRI',
-      doctorName: 'Dr. Lee',
-      hospitalName: 'Chong Pang Camp Medical Center',
-    },
-  ];
-
-  const columns = [
-    {
-      title: 'Date',
-      dataIndex: 'date',
-      key: 'date',
-    },
-    {
-      title: 'Type',
-      dataIndex: 'type',
-      key: 'type',
-    },
-  ];
+  // TODO implement a proper backend
+  const medicalHistory = sampleMedicalHistory
+  const columns = sampleDevicesColumns
 
   const expandedRowRender = (record: any) => (
     <div>

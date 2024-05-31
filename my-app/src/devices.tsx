@@ -1,8 +1,10 @@
-import React from 'react';
 import './devices.css';
-import { useNavigate } from 'react-router-dom';
-import { Table, Button } from 'antd';
 import 'antd/dist/reset.css';
+import { Table, Button } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import {sampleDevices, sampleDevicesColumns } from './data';
+
 
 const Devices = () => {
   const navigate = useNavigate();
@@ -15,20 +17,9 @@ const Devices = () => {
     navigate('/catalog');
   }
 
-  // TODO add backend
-  const devices = [
-    { id: 1, name: 'Pacemaker', brand: 'Brand A', type: 'Type A', serialNumber: 'SN001', clsRating: 4 },
-    { id: 2, name: 'Blood Pressure Meter', brand: 'Brand B', type: 'Type B', serialNumber: 'SN002', clsRating: 2 },
-    { id: 3, name: 'Artificial Heart Valve', brand: 'Brand C', type: 'Type C', serialNumber: 'SN003', clsRating: 3 },
-  ];
-
-  const columns = [
-    { title: 'Device Name', dataIndex: 'name', key: 'name' },
-    { title: 'Brand', dataIndex: 'brand', key: 'brand' },
-    { title: 'Type', dataIndex: 'type', key: 'type' },
-    { title: 'Serial Number', dataIndex: 'serialNumber', key: 'serialNumber' },
-    { title: 'CLS Rating', dataIndex: 'clsRating', key: 'clsRating' },
-  ];
+  // TODO implement a proper backend
+  const devices = sampleDevices
+  const columns = sampleDevicesColumns
 
   return (
     <div className="mainContainer">
