@@ -1,8 +1,10 @@
 .mainContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  position: relative; /* Ensure the container is positioned relatively */
 }
 
 .titleContainer {
@@ -36,4 +38,14 @@
 .customButton:hover, .customButton:focus {
   background-color: #ebe1f3;
   color: white;
+}
+
+.signOutButton {
+  background-color: #5e17eb;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px; 
+  height: 45px; 
 }

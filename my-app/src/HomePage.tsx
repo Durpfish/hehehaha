@@ -14,8 +14,15 @@ const HomePage: React.FC = () => {
     navigate('/devices');
   };
 
+  const onSignOutButtonClick = () => {
+    navigate('/login');
+  };
+
   return (
     <div className="mainContainer">
+      <Button type="primary" onClick={onSignOutButtonClick} className="signOutButton">
+        Sign Out
+      </Button>
       <Row justify="center" align="middle" style={{ height: '100vh', flexDirection: 'column' }}>
         <Col>
           <div className="titleContainer">
