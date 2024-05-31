@@ -8,6 +8,12 @@
     font-size: 24px;
   }
   
+  .alertContainer {
+    padding-bottom: 20px;
+    text-align: left;
+    width: 500px; 
+  }
+
   .devicesTableContainer {
     margin: 0 auto;
     max-width: 800px;
