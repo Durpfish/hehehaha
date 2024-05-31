@@ -3,7 +3,7 @@ import 'antd/dist/reset.css';
 import { Table, Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
-import {sampleDevices, sampleDevicesColumns } from './data';
+import {sampleDevices1, sampleDevicesColumns } from './data';
 
 
 const Devices = () => {
@@ -18,7 +18,7 @@ const Devices = () => {
   }
 
   // TODO implement a proper backend
-  const devices = sampleDevices
+  const devices = sampleDevices1
   const columns = sampleDevicesColumns
 
   return (
