@@ -7,13 +7,13 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [loginType, setLoginType] = useState('user'); // Default to user login
 
   const navigate = useNavigate();
 
-  const onButtonClick = () => {
-    // Hardcoded credentials
-    const hardcodedUsername = 'user123';
-    const hardcodedPassword = 'password123';
+  const onUserLoginClick = () => {
+    // Hardcoded user credentials
+    const hardcodedUser = { username: 'user123', password: 'password123' };
 
     // Set initial error values to empty
     setUsernameError('');
@@ -30,18 +30,39 @@ const Login = () => {
       return;
     }
 
-    // Validate hardcoded credentials
-    if (username !== hardcodedUsername) {
-      setUsernameError('Invalid username');
+    // Validate user credentials
+    if (username === hardcodedUser.username && password === hardcodedUser.password) {
+      navigate('/HomePage');
+    } else {
+      setUsernameError('Invalid username or password');
+    }
+  };
+
+  const onStaffLoginClick = () => {
+    // Hardcoded staff credentials
+    const hardcodedStaff = { username: 'staff123', password: 'staffpass123' };
+
+    // Set initial error values to empty
+    setUsernameError('');
+    setPasswordError('');
+
+    // Check if the user has entered both fields correctly
+    if (username === '') {
+      setUsernameError('Please enter your username');
       return;
     }
 
-    if (password !== hardcodedPassword) {
-      setPasswordError('Invalid password');
+    if (password === '') {
+      setPasswordError('Please enter a password');
       return;
     }
 
-    navigate('/HomePage');
+    // Validate staff credentials
+    if (username === hardcodedStaff.username && password === hardcodedStaff.password) {
+      navigate('/StaffHomePage');
+    } else {
+      setUsernameError('Invalid username or password');
+    }
   };
 
   return (
@@ -71,8 +92,9 @@ const Login = () => {
         <label className="errorLabel">{passwordError}</label>
       </div>
       <br />
-      <div className={'inputContainer'}>
-        <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Log in'} />
+      <div className={'inputContainer'} style={{ display: 'flex', flexDirection: 'row' }}>
+        <input className={'inputButton'} type="button" onClick={onUserLoginClick} value={'Log in as User'} />
+        <input className={'inputButton'} type="button" onClick={onStaffLoginClick} value={'Log in as Staff'} />
       </div>
     </div>
   );
