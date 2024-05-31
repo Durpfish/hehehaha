@@ -44,3 +44,8 @@
     border-radius: 8px;
     text-align: left;
   }
+
+  .backButtonContainer {
+    text-align: center;
+    margin-top: 20px;
+  }
