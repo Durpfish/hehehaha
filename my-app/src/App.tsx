@@ -5,6 +5,7 @@ import Devices from './devices'; // list of my devices, clicking on device bring
 //import Catalog from './devices/catalog'; // rank devices on CLS security labelling, need to classify devices
 //import Records from './records'; // doctor access history (can be modal)
 //import Inventory from './inventory'; // same as /devices, clicking on inventory item opens modal for item <id>
+import History from './history';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/HomePage" element={<HomePage/>} />
           <Route path="/devices" element={<Devices/>} />
+          <Route path="/history" element={<History />} />
         </Routes>
       </BrowserRouter>
     </div>
