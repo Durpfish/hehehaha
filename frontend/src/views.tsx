@@ -6,8 +6,6 @@ export const toMedicalHistoryView = (record: MedicalHistory): MedicalHistoryView
   const dateAccessed = new Date(record.dateTimeAccessed).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
   const timeAccessed = new Date(record.dateTimeAccessed).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: true });
 
-  console.log("Input record:", record);
-
   const medicalHistoryView: MedicalHistoryView = {
     key: record.id,
     bodyPart: record.bodyPart,
@@ -22,8 +20,6 @@ export const toMedicalHistoryView = (record: MedicalHistory): MedicalHistoryView
     accessedBy: record.accessedBy,
     accessorRole: record.accessorRole,
   };
-
-  console.log("Resulting view:", medicalHistoryView);
 
   return medicalHistoryView;
 };
