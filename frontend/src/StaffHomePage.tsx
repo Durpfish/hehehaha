@@ -16,7 +16,7 @@ import './StaffHomePage.css';
 const StaffHomePage: React.FC = () => {
   const navigate = useNavigate();
 
-  const onStub1ButtonClick = () => {
+  const onButtonClick = () => {
     //navigate('/history');
   }
   const onStub2ButtonClick = () => {

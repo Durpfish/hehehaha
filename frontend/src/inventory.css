@@ -1,0 +1,29 @@
+/* Align the title and search bar */
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Centralize the main container */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centralize the catalog container */
+.catalogContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Smaller search bar */
+.ant-input {
+  height: 24px;
+  font-size: 12px;
+}
