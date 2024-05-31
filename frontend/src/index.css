@@ -50,11 +50,16 @@ code {
 
 input[type='button'] {
   border: none;
-  background: #6cf0fc;
+  background:#6cf0fc ; /* Default background color */
   color: white;
   padding: 12px 24px;
   margin: 8px;
   font-size: 24px;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+input[type='button']:hover {
+  background: #183454; /* Darker shade for hover effect */
 }
