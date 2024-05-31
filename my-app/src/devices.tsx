@@ -1,11 +1,15 @@
 import React from 'react';
 import './devices.css';
-//import { useNavigate } from 'react-router-dom';
-import { Table } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import { Table, Button } from 'antd';
 import 'antd/dist/reset.css';
 
 const Devices = () => {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const onBackButtonClick = () => {
+    navigate('/HomePage');
+  }
 
   // TODO add backend
   const devices = [
@@ -34,6 +38,11 @@ const Devices = () => {
           rowKey="id"
           pagination={false}
         />
+      </div>
+      <div className="backButtonContainer">
+        <Button type="primary" onClick={onBackButtonClick}>
+          Back
+        </Button>
       </div>
     </div>
   );

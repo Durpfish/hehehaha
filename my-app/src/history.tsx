@@ -1,11 +1,16 @@
 import React from 'react';
-import { Table, Collapse } from 'antd';
-import './history.css'; // Make sure to create this CSS file for additional styling
-
-const { Panel } = Collapse;
+import { Table, Button } from 'antd';
+import { useNavigate } from 'react-router-dom';
+import './history.css';
 
 const History = () => {
-  // Dummy medical history data
+  const navigate = useNavigate();
+
+  const onBackButtonClick = () => {
+    navigate('/HomePage');
+  }
+
+  // TODO add backend
   const medicalHistory = [
     {
       key: '1',
@@ -67,6 +72,11 @@ const History = () => {
             expandable={{ expandedRowRender }}
           />
         </div>
+      </div>
+      <div className="backButtonContainer">
+        <Button type="primary" onClick={onBackButtonClick}>
+          Back
+        </Button>
       </div>
     </div>
   );
