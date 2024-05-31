@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import './history.css'; // Make sure to create this CSS file for styling
+import './history.css';
 
 const History = () => {
-  // Dummy medical history data
   const medicalHistory = [
     {
       doctorName: "Dr. Tiew",
@@ -24,7 +23,6 @@ const History = () => {
     },
   ];
 
-  // State to keep track of expanded entries
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const toggleExpand = (index: number) => {
