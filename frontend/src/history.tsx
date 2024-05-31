@@ -2,12 +2,11 @@ import React, {useEffect, useState} from 'react';
 import { Table, Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import './history.css';
-import { sampleHistoryColumns, sampleMedicalHistory } from './data';
+import { sampleDevices2, sampleHistoryColumns, sampleMedicalHistory } from './data';
 import { MedicalHistoryView } from './types';
 import { toMedicalHistoryView } from './views';
-import fetchData from './utils/fetchData';
+// import fetchData from './utils/fetchData';
 import { MedicalHistory } from './types';
-
 
 
 const History = () => {
@@ -17,7 +16,8 @@ const History = () => {
   const [catalogView, setCatalogView] = useState<MedicalHistoryView[]>([]);
 
   useEffect(() => {
-    fetchData("/records", setCatalog, setLoading)
+    // fetchData("/records", setCatalog, setLoading)
+    setCatalog(sampleMedicalHistory);
   }, []);
 
   useEffect(() => {

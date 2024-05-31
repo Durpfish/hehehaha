@@ -23,7 +23,7 @@
 }
 
 .customButton {
-  background-color: #5e17eb;
+  background-color: #6cf0fc;
   color: white;
   font-weight: bold;
   width: 300px;
@@ -41,7 +41,7 @@
 }
 
 .signOutButton {
-  background-color: #5e17eb;
+  background-color: #6cf0fc;
   font-weight: bold;
   position: absolute;
   top: 20px;

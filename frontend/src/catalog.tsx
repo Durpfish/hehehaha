@@ -7,6 +7,7 @@ import 'antd/dist/reset.css';
 import './catalog.css';
 import { Device } from "./types";
 import DeviceCard from "./device-card";
+import { sampleDevices2 } from './data';
 
 const { Option } = Select;
 
@@ -18,6 +19,7 @@ const Catalog: React.FC = () => {
   const [filteredCatalog, setFilteredCatalog] = useState<Device[]>([]);
 
   // Sample data
+  /*
   const sampleData: Device[] = [
     {
       id: '1',
@@ -85,14 +87,18 @@ const Catalog: React.FC = () => {
       //isCatalog: true,
     },
   ];
+  */
 
   useEffect(() => {
-    fetchData("/catalog", setCatalog, setLoading)
-    setCatalog(sampleData);
-    setFilteredCatalog(sampleData);
+    // fetchData("/catalog", setCatalog, setLoading)
+    //setCatalog(sampleData);
+    //setFilteredCatalog(sampleData);
     setLoading(false);
+    setCatalog(sampleDevices2);
+    setFilteredCatalog(sampleDevices2);
   }, []);
   
+  /*
   const columns: ColumnsType<Device> = [
     {
       title: 'Icon',
@@ -132,11 +138,14 @@ const Catalog: React.FC = () => {
       defaultSortOrder: 'ascend' as 'ascend',
     },
   ];
+  */
 
+  /*
   const handleRowClick = (record: Device) => {
     setSelectedDevice(record);
     setIsModalVisible(true);
   };
+  */
 
   const handleCardClick = (device: Device) => {
     setSelectedDevice(device);

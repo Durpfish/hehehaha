@@ -1,11 +1,12 @@
-.mainContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    position: relative; /* Ensure the container is positioned relatively */
-  }
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 100vh;
+  width: 80%;
+}
   
   .titleContainer {
     text-align: center;
@@ -15,6 +16,8 @@
   .welcomeMessage {
     font-size: 56px;
   }
+
+
   
   .buttonContainer {
     display: flex;
@@ -23,7 +26,7 @@
   }
   
   .customButton {
-    background-color: #5e17eb;
+    background-color: #6cf0fc;
     color: white;
     font-weight: bold;
     width: 300px;
@@ -41,7 +44,7 @@
   }
   
   .signOutButton {
-    background-color: #5e17eb;
+    background-color: #6cf0fc;
     font-weight: bold;
     position: absolute;
     top: 20px;
