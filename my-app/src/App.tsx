@@ -1,14 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import HomePage from './HomePage';
+import Login from './login';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
-  const username = 'User'; //TODO replace with actual user logic
-
   return (
     <div className="App">
-      <HomePage username={username} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/HomePage" element={<HomePage/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

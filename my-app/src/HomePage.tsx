@@ -1,20 +1,40 @@
 import React from 'react';
 import './HomePage.css';
+import { useNavigate } from 'react-router-dom';
 
-interface HomePageProps {
-    username: string;
+const HomePage = () => {
+  const navigate = useNavigate();
+
+  const onRecordsButtonClick = () => {
+    navigate('/records');
   }
+  const onDevicesButtonClick = () => {
+      navigate('/devices');
+    }
   
-  const HomePage: React.FC<HomePageProps> = ({ username }) => {
-    return (
-      <div className="container">
-        <h1>Welcome, {username}</h1>
-        <div className="button-container">
-          <button className="square-button">My Records</button>
-          <button className="square-button">My Devices</button>
+  return (
+    <div className="mainContainer">
+      <div className={'titleContainer'}>
+        <div>
+          Welcome, user123!
         </div>
       </div>
-    );
-  };
+      <div className={'buttonContainer'}>
+        <input
+          className={'inputButton'}
+          type="button"
+          onClick={onRecordsButtonClick}
+          value='My Records'
+        />
+        <input
+          className={'inputButton'}
+          type="button"
+          onClick={onDevicesButtonClick}
+          value='My Devices'
+        />
+      </div>
+    </div>
+  )
+};
   
-  export default HomePage;
+export default HomePage;
