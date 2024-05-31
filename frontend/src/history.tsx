@@ -3,7 +3,7 @@ import { Table, Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import './history.css';
 import { sampleHistoryColumns, sampleMedicalHistory } from './data';
-import { MedicalHistory, MedicalHistoryView } from './types';
+import { MedicalHistoryView } from './types';
 import { toMedicalHistoryView } from './views';
 
 
@@ -40,7 +40,7 @@ const History = () => {
         <div>My Medical Records</div>
       </div>
       <div className={'tableContainer'}>
-        <div style={{ width: '800px' }}>
+        <div style={{ width: '1000px' }}>
           <Table
             dataSource={medicalHistory}
             columns={columns}
