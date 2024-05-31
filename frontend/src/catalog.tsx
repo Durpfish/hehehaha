@@ -6,6 +6,7 @@ import { ColumnsType } from 'antd/es/table';
 import 'antd/dist/reset.css';
 import './catalog.css';
 import { Device } from "./types";
+import { sampleDevices2 } from './data';
 
 const Catalog: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -14,7 +15,8 @@ const Catalog: React.FC = () => {
   const [catalog, setCatalog] = useState<Device[]>([]);
 
   useEffect(() => {
-    fetchData("/catalog", setCatalog, setLoading)
+    // fetchData("/catalog", setCatalog, setLoading)
+    setCatalog(sampleDevices2)
   }, []);
   
   const columns: ColumnsType<Device> = [

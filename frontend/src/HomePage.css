@@ -22,8 +22,9 @@
   gap: 20px;
 }
 
+
 .customButton {
-  background-color: #5e17eb;
+  background-color: #6cf0fc;
   color: white;
   font-weight: bold;
   width: 300px;
@@ -41,7 +42,7 @@
 }
 
 .signOutButton {
-  background-color: #5e17eb;
+  background-color: #6cf0fc;
   font-weight: bold;
   position: absolute;
   top: 20px;
@@ -49,3 +50,9 @@
   width: 150px; 
   height: 45px; 
 }
+
+.signOutButton :hover, .signOutButton :focus {
+  background-color: #183454;
+  color: white;
+}
+

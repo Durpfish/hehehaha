@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@ant-design/charts": "^2.1.1",
     "antd": "^5.17.4",
     "cors": "^2.8.5",
     "express": "^4.19.2",

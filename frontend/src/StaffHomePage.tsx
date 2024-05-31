@@ -1,103 +1,171 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button, Row, Col } from 'antd';
-import {
-  Card,
-  Title,
-  Text,
-  ProgressBar,
-  DonutChart,
-  LineChart,
-  Metric
-} from '@tremor/react';
-import 'antd/dist/reset.css';
-import './StaffHomePage.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Row, Col, Card, Progress } from "antd";
+import { Line } from "@ant-design/charts";
+import { Typography } from "antd";
+import "antd/dist/reset.css";
+import { Button } from "antd";
+
+const { Title } = Typography;
 
 const StaffHomePage: React.FC = () => {
   const navigate = useNavigate();
 
-  const onButtonClick = () => {
-    //navigate('/history');
-  }
-  const onStub2ButtonClick = () => {
-    //navigate('/devices');
-  };
   const onSignOutButtonClick = () => {
-    navigate('/login');
+    navigate("/login");
   };
 
-  const riskHistoryData = [
-    { date: 'Dec 2023', value: 65 },
-    { date: 'Jan 2024', value: 70 },
-    { date: 'Feb 2024', value: 75 },
-    { date: 'Mar 2024', value: 80 },
-    { date: 'Apr 2024', value: 85 },
-    { date: 'May 2024', value: 90 },
-    { date: 'Jun 2024', value: 88 },
-    { date: 'Jul 2024', value: 86 },
-    { date: 'Aug 2024', value: 87 },
-    { date: 'Sep 2024', value: 89 },
-    { date: 'Oct 2024', value: 91 },
-    { date: 'Nov 2024', value: 93 },
-    { date: 'Dec 2024', value: 95 },
+  const data = [
+    { year: "Dec 2023", value: 65 },
+    { year: "Jan 2024", value: 59 },
+    { year: "Feb 2024", value: 80 },
+    { year: "Mar 2024", value: 81 },
+    { year: "Apr 2024", value: 56 },
+    { year: "May 2024", value: 55 },
+    { year: "Jun 2024", value: 40 },
+    { year: "Jul 2024", value: 45 },
+    { year: "Aug 2024", value: 60 },
+    { year: "Sep 2024", value: 65 },
+    { year: "Oct 2024", value: 70 },
+    { year: "Nov 2024", value: 75 },
+    { year: "Dec 2024", value: 82 },
   ];
 
-  
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        {/* First row */}
-        <div style={{ display: 'flex', gap: '1rem' }}>
-            <Card>
-                <Title>Risk Score</Title>
-                <DonutChart
-                    data={[{ value: 82 }]}
-                    category="value"
-                    colors={["blue"]}
-                    variant="donut"
-                />
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Text>0</Text>
-                    <Text>5</Text>
-                    <Text>10</Text>
-                </div>
-            </Card>
-            <Card>
-                <Title>Compliance Status</Title>
-                <ProgressBar value={73} />
-                <Text>73%</Text>
-            </Card>
-            <Card>
-                <Title>Risk History</Title>
-                <LineChart
-                    data={riskHistoryData}
-                    index="date"
-                    categories={['risk']}
-                    colors={["blue"]}
-                    yAxisWidth={40}
-                />
-            </Card>
-        </div>
+  const config = {
+    data,
+    xField: "year",
+    yField: "value",
+    height: 200,
+    yAxis: { min: 0, max: 100 },
+  };
 
-        {/* Second row */}
-        <div style={{ display: 'flex', gap: '1rem' }}>
-            <Card>
-                <Title>Outdated OS</Title>
-                <Metric>43</Metric>
-                <Text>devices</Text>
-            </Card>
-            <Card>
-                <Title>Known vulnerabilities</Title>
-                <Metric>23</Metric>
-                <Text>devices</Text>
-            </Card>
-            <Card>
-                <Title>Last Security Audit</Title>
-                <Metric>21</Metric>
-                <Text>days ago</Text>
-            </Card>
-        </div>
+  return (
+    <div className="dashboardContainer" style={{ padding: "10px" }}>
+      <div className="titleContainer">
+        <img src="../rawlogo.png" width="300px" />
+        <div>Your dashboard</div>
+      </div>
+      <Row gutter={16} style={{ display: "flex", alignItems: "stretch" }}>
+        {" "}
+        {/* Adjusted this line */}
+        <Col span={8}>
+          <Card
+            hoverable
+            title="Risk Score"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
+            <div style={{ textAlign: "center" }}>
+              <div style={{ marginBottom: "20px" }}>
+                <Progress strokeColor="#6cf0fc" type="circle" percent={82} size={200} trailColor="" />
+              </div>
+            </div>
+          </Card>
+        </Col>
+        <Col span={8}>
+          <Card
+            hoverable
+            title="Compliance Status"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
+            <div>
+              <Title>83%</Title>
+              <Progress strokeColor="#6cf0fc" percent={83} />
+            </div>
+          </Card>
+        </Col>
+        <Col span={8}>
+          <Card
+            hoverable
+            title="Risk History"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
+            <Line {...config} />
+          </Card>
+        </Col>
+      </Row>
+      <Row gutter={16} style={{ marginTop: "20px" }}>
+        <Col span={8}>
+          <Card
+            hoverable
+            title="Outdated OS"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
+            <Title>43</Title>
+            <Title level={2}>devices</Title>
+          </Card>
+        </Col>
+        <Col span={8}>
+          <Card
+            hoverable
+            title="Known vulnerabilities"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
+            <Title>23</Title>
+            <Title level={2}>devices</Title>
+          </Card>
+        </Col>
+        <Col span={8}>
+          <Card
+            hoverable
+            title="Last Security Audit"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
+            <Title>21</Title>
+            <Title level={2}>days ago</Title>
+          </Card>
+        </Col>
+      </Row>
+      <Button
+        type="primary"
+        className="signOutButton"
+        onClick={onSignOutButtonClick}
+      >
+        Sign Out
+      </Button>
     </div>
-);
+  );
 };
 
 export default StaffHomePage;

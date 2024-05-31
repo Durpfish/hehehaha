@@ -25,7 +25,8 @@ const HomePage: React.FC = () => {
       <Row justify="center" align="middle" style={{ height: '100vh', flexDirection: 'column' }}>
         <Col>
           <div className="titleContainer">
-            <h1 className="welcomeMessage">Welcome, user123!</h1>
+            <img src = "../rawlogo.png" width = "300px"></img>
+            <h1 className="welcomeMessage">Welcome, Wei Xuan!</h1>
           </div>
         </Col>
         <Col>
