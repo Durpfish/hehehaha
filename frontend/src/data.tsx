@@ -2,6 +2,7 @@ import { Column, Device, MedicalHistory } from "./types";
 
 const appName = "Synergy";
 
+// Devices
 export const sampleDevices: Device[] = [
   {
     id: 1,
@@ -29,11 +30,13 @@ export const sampleDevices: Device[] = [
   },
 ];
 
+// All The Possible Devices
 export const sampleDevices2: Device[] = [
   { id: 1, name: 'Pacemaker', brand: 'Brand A', type: 'Type A', serialNumber: 'SN001', clsRating: 4 },
   { id: 2, name: 'Blood Pressure Meter', brand: 'Brand B', type: 'Type B', serialNumber: 'SN002', clsRating: 2 },
   { id: 3, name: 'Artificial Heart Valve', brand: 'Brand C', type: 'Type C', serialNumber: 'SN003', clsRating: 3 },
 ];
+
 
 export const sampleDevicesColumns: Column[] = [
   { title: "Device Name", dataIndex: "name", key: "name" },
