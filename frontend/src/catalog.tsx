@@ -6,7 +6,6 @@ import { ColumnsType } from 'antd/es/table';
 import 'antd/dist/reset.css';
 import './catalog.css';
 import { Device } from "./types";
-import { sampleDevices2 } from './data';
 
 const Catalog: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
