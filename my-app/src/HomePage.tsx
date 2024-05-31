@@ -8,9 +8,8 @@ const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
   const onRecordsButtonClick = () => {
-    navigate('/records');
-  };
-
+    navigate('/history');
+  }
   const onDevicesButtonClick = () => {
     navigate('/devices');
   };
