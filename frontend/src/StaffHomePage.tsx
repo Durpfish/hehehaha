@@ -63,7 +63,7 @@ const StaffHomePage: React.FC = () => {
           >
             <div style={{ textAlign: "center" }}>
               <div style={{ marginBottom: "20px" }}>
-                <Progress strokeColor="#6cf0fc" type="circle" percent={82} size={200} trailColor="" />
+                <Progress strokeColor="#6cf0fc" type="circle" percent={75} size={200} trailColor="" />
               </div>
             </div>
           </Card>
