@@ -10,23 +10,26 @@ const History = () => {
     {
       key: '1',
       date: '2024-05-31',
+      time: '10:00 AM',
       type: 'X-Ray',
-      doctorName: 'Dr. Smith',
-      hospitalName: 'City Hospital',
+      doctorName: 'Dr. Tiew',
+      hospitalName: 'Changi General Hospital',
     },
     {
       key: '2',
       date: '2024-05-30',
+      time: '11:30 AM',
       type: 'Blood Test',
-      doctorName: 'Dr. Johnson',
-      hospitalName: 'General Hospital',
+      doctorName: 'Dr. Koey',
+      hospitalName: 'Tan Tock Seng General Hospital',
     },
     {
       key: '3',
       date: '2024-05-29',
+      time: '09:45 AM',
       type: 'MRI',
       doctorName: 'Dr. Lee',
-      hospitalName: 'Medical Center',
+      hospitalName: 'Chong Pang Camp Medical Center',
     },
   ];
 
@@ -46,7 +49,8 @@ const History = () => {
   const expandedRowRender = (record: any) => (
     <div>
       <p>Doctor: {record.doctorName}</p>
-      <p>Hospital: {record.hospitalName}</p>
+      <p>Hospital/Clinic: {record.hospitalName}</p>
+      <p>Time accessed: {record.time}</p>
     </div>
   );
 
