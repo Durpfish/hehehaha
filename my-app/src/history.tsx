@@ -1,60 +1,71 @@
-import React, { useState } from 'react';
-import './history.css'; // Make sure to create this CSS file for styling
+import React from 'react';
+import { Table, Collapse } from 'antd';
+import './history.css'; // Make sure to create this CSS file for additional styling
+
+const { Panel } = Collapse;
 
 const History = () => {
   // Dummy medical history data
   const medicalHistory = [
     {
-      doctorName: "Dr. Tiew",
-      hospitalName: "Changi General Hospital",
-      dataType: "X-Ray",
-      accessDate: new Date("2024-05-31T09:00:00"),
+      key: '1',
+      date: '2024-05-31',
+      type: 'X-Ray',
+      doctorName: 'Dr. Smith',
+      hospitalName: 'City Hospital',
     },
     {
-      doctorName: "Dr. Koey",
-      hospitalName: "Tan Tock Seng Hospital",
-      dataType: "Blood Test",
-      accessDate: new Date("2024-05-30T15:30:00"),
+      key: '2',
+      date: '2024-05-30',
+      type: 'Blood Test',
+      doctorName: 'Dr. Johnson',
+      hospitalName: 'General Hospital',
     },
     {
-      doctorName: "Dr. Lee",
-      hospitalName: "Chong Pang Camp Medical Center",
-      dataType: "MRI",
-      accessDate: new Date("2024-05-29T11:45:00"),
+      key: '3',
+      date: '2024-05-29',
+      type: 'MRI',
+      doctorName: 'Dr. Lee',
+      hospitalName: 'Medical Center',
     },
   ];
 
-  // State to keep track of expanded entries
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const columns = [
+    {
+      title: 'Date',
+      dataIndex: 'date',
+      key: 'date',
+    },
+    {
+      title: 'Type',
+      dataIndex: 'type',
+      key: 'type',
+    },
+  ];
 
-  const toggleExpand = (index: number) => {
-    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
+  const expandedRowRender = (record: any) => (
+    <div>
+      <p>Doctor: {record.doctorName}</p>
+      <p>Hospital: {record.hospitalName}</p>
+    </div>
+  );
 
   return (
     <div className="mainContainer">
       <div className={'titleContainer'}>
-        <div>
-          My Medical Records
+        <div>My Medical Records</div>
+      </div>
+      <div className={'tableContainer'}>
+        <div style={{ width: '800px' }}> {/* Set the width of the container */}
+          <Table
+            dataSource={medicalHistory}
+            columns={columns}
+            expandable={{ expandedRowRender }}
+          />
         </div>
       </div>
-      <div className={'historyContainer'}>
-        {medicalHistory.map((record, index) => (
-          <div key={index} className="record" onClick={() => toggleExpand(index)}>
-            <div className="date-type">
-              {index + 1}. {record.accessDate.toISOString().split('T')[0]}, {record.dataType}
-            </div>
-            {expandedIndex === index && (
-              <div className="expanded-info">
-                <div>Doctor: {record.doctorName}</div>
-                <div>Hospital/Clinic: {record.hospitalName}</div>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
     </div>
-  )
+  );
 };
 
 export default History;
