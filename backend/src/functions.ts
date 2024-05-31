@@ -58,16 +58,16 @@ export const getRecords = async () => {
     const recordsQuery = `
       SELECT 
         id AS "id", 
-        body_part AS "bodyPart", 
-        record_type AS "recordType", 
-        date_time_created AS "dateTimeCreated", 
-        date_time_accessed AS "dateTimeAccessed", 
-        access_location AS "accessLocation", 
-        access_terminal AS "accessTerminal", 
-        access_action AS "accessAction", 
-        accessed_by AS "accessedBy", 
-        accessor_role AS "accessorRole"
-      FROM medical_records;
+        bodypart AS "bodyPart", 
+        recordtype AS "recordType", 
+        datetimecreated AS "dateTimeCreated", 
+        datetimeaccessed AS "dateTimeAccessed", 
+        accesslocation AS "accessLocation", 
+        accessterminal AS "accessTerminal", 
+        accessaction AS "accessAction", 
+        accessedby AS "accessedBy", 
+        accessorrole AS "accessorRole"
+      FROM records;
     `;
 
     const { rows } = await db.query(recordsQuery);
