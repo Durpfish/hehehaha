@@ -2,7 +2,7 @@ import React from 'react';
 import { Table, Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import './history.css';
-import { sampleDevicesColumns, sampleMedicalHistory } from './data';
+import { sampleHistoryColumns, sampleMedicalHistory } from './data';
 
 const History = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const History = () => {
 
   // TODO implement a proper backend
   const medicalHistory = sampleMedicalHistory
-  const columns = sampleDevicesColumns
+  const columns = sampleHistoryColumns
 
   const expandedRowRender = (record: any) => (
     <div>
