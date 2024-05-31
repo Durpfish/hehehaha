@@ -5,7 +5,6 @@ import './history.css'; // Make sure to create this CSS file for additional styl
 const { Panel } = Collapse;
 
 const History = () => {
-  // Dummy medical history data
   const medicalHistory = [
     {
       key: '1',
@@ -36,12 +35,10 @@ const History = () => {
       dataIndex: 'date',
       key: 'date',
     },
-    {
-      title: 'Type',
-      dataIndex: 'type',
-      key: 'type',
-    },
   ];
+
+  // State to keep track of expanded entries
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const expandedRowRender = (record: any) => (
     <div>
