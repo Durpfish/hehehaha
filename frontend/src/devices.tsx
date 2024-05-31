@@ -4,11 +4,12 @@ import { Table, Button, Alert, Space, Modal} from 'antd';
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { sampleDevicesColumns } from "./data";
-import fetchData from "./utils/fetchData";
+// import fetchData from "./utils/fetchData";
+import { sampleDevices1 } from './data';
 
 const Devices = () => {
   const navigate = useNavigate();
-  const [devices, setDevices] = useState([]);
+  const [devices, setDevices] = useState(sampleDevices1);
   const [loading, setLoading] = useState(false)
   const [open, setOpen] = useState(false);
 
@@ -36,9 +37,9 @@ const Devices = () => {
     setOpen(false);
   };
 
-  useEffect(() => {
-    fetchData("/devices", setDevices, setLoading)
-  }, []);
+  // useEffect(() => {
+  //   fetchData("/devices", setDevices, setLoading)
+  // }, []);
 
   const columns = sampleDevicesColumns;
 
