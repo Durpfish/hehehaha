@@ -15,11 +15,9 @@ const Login = () => {
     // Hardcoded user credentials
     const hardcodedUser = { username: 'user123', password: 'password123' };
 
-    // Set initial error values to empty
     setUsernameError('');
     setPasswordError('');
 
-    // Check if the user has entered both fields correctly
     if (username === '') {
       setUsernameError('Please enter your username');
       return;
@@ -30,25 +28,9 @@ const Login = () => {
       return;
     }
 
-    // Validate user credentials
-    if (username === hardcodedUser.username && password === hardcodedUser.password) {
-      navigate('/HomePage');
-    } else {
-      setUsernameError('Invalid username or password');
-    }
-  };
-
-  const onStaffLoginClick = () => {
-    // Hardcoded staff credentials
-    const hardcodedStaff = { username: 'staff123', password: 'staffpass123' };
-
-    // Set initial error values to empty
-    setUsernameError('');
-    setPasswordError('');
-
-    // Check if the user has entered both fields correctly
-    if (username === '') {
-      setUsernameError('Please enter your username');
+    // Validate hardcoded credentials
+    if (username !== hardcodedUsername) {
+      setUsernameError('Invalid username');
       return;
     }
 
