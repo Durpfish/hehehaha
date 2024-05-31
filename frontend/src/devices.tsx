@@ -2,22 +2,23 @@ import './devices.css';
 import 'antd/dist/reset.css';
 import { Table, Button, Alert, Space, Modal} from 'antd';
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
-import {sampleDevices1, sampleDevicesColumns } from './data';
+import React, { useEffect, useState } from 'react';
+import { sampleDevicesColumns } from "./data";
+import fetchData from "./utils/fetchData";
 
 const Devices = () => {
   const navigate = useNavigate();
+  const [devices, setDevices] = useState([]);
+  const [loading, setLoading] = useState(false)
+  const [open, setOpen] = useState(false);
 
   const onBackButtonClick = () => {
-    navigate('/HomePage');
-  }
+    navigate("/HomePage");
+  };
 
   const onCatalogButtonClick = () => {
-    navigate('/catalog');
-  }
-
-  const [loading, setLoading] = useState(false);
-  const [open, setOpen] = useState(false);
+    navigate("/catalog");
+  };
 
   const showModal = () => {
     setOpen(true);
@@ -35,9 +36,11 @@ const Devices = () => {
     setOpen(false);
   };
 
-  // TODO implement a proper backend
-  const devices = sampleDevices1
-  const columns = sampleDevicesColumns
+  useEffect(() => {
+    fetchData("/devices", setDevices, setLoading)
+  }, []);
+
+  const columns = sampleDevicesColumns;
 
   return (
     <div className="mainContainer">
@@ -100,6 +103,7 @@ const Devices = () => {
           dataSource={devices}
           rowKey="id"
           pagination={false}
+          loading={loading}
         />
       </div>
       <div className="backButtonContainer">

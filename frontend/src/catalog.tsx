@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import fetchData from './utils/fetchData';
 import { useNavigate } from 'react-router-dom';
 import { Table, Modal, Button } from 'antd';
 import { ColumnsType } from 'antd/es/table';
@@ -10,8 +11,12 @@ import { sampleDevices2 } from './data';
 const Catalog: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedDevice, setSelectedDevice] = useState<Device | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [catalog, setCatalog] = useState<Device[]>([]);
 
-  const devices = sampleDevices2;
+  useEffect(() => {
+    fetchData("/catalog", setCatalog, setLoading)
+  }, []);
   
   const columns: ColumnsType<Device> = [
     {
@@ -77,7 +82,8 @@ const Catalog: React.FC = () => {
       <div className="catalogContainer">
         <Table
           columns={columns}
-          dataSource={devices}
+          dataSource={catalog}
+          loading={loading}
           rowKey="id"
           onRow={(record) => ({
             onClick: () => handleRowClick(record),
