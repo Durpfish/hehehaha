@@ -2,22 +2,17 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Row, Col, Card, Progress } from "antd";
 import { Line } from "@ant-design/charts";
-import { Typography } from 'antd';
+import { Typography } from "antd";
 import "antd/dist/reset.css";
+import { Button } from "antd";
 
-const { Title } = Typography; 
+const { Title } = Typography;
 
 const StaffHomePage: React.FC = () => {
   const navigate = useNavigate();
 
-  const onStub1ButtonClick = () => {
-    //navigate('/history');
-  };
-  const onStub2ButtonClick = () => {
-    //navigate('/devices');
-  };
   const onSignOutButtonClick = () => {
-    //navigate('/login');
+    navigate("/login");
   };
 
   const data = [
@@ -57,7 +52,7 @@ const StaffHomePage: React.FC = () => {
           <Card
             hoverable
             title="Risk Score"
-            style={  {
+            style={{
               display: "flex",
               flexDirection: "column",
               height: "100%",
@@ -77,7 +72,7 @@ const StaffHomePage: React.FC = () => {
           <Card
             hoverable
             title="Compliance Status"
-            style={  {
+            style={{
               display: "flex",
               flexDirection: "column",
               height: "100%",
@@ -162,6 +157,13 @@ const StaffHomePage: React.FC = () => {
           </Card>
         </Col>
       </Row>
+      <Button
+        type="primary"
+        className="customButton"
+        onClick={onSignOutButtonClick}
+      >
+        My Devices
+      </Button>
     </div>
   );
 };
