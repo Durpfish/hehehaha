@@ -1,6 +1,8 @@
+import { Column, Device, MedicalHistory } from "./types";
+
 const appName = "Synergy";
 
-export const sampleDevices: Object[] = [
+export const sampleDevices: Device[] = [
   {
     id: 1,
     name: "Pacemaker",
@@ -27,7 +29,7 @@ export const sampleDevices: Object[] = [
   },
 ];
 
-export const sampleDevicesColumns: Object[] = [
+export const sampleDevicesColumns: Column[] = [
   { title: "Device Name", dataIndex: "name", key: "name" },
   { title: "Brand", dataIndex: "brand", key: "brand" },
   { title: "Type", dataIndex: "type", key: "type" },
@@ -35,7 +37,7 @@ export const sampleDevicesColumns: Object[] = [
   { title: "CLS Rating", dataIndex: "clsRating", key: "clsRating" },
 ];
 
-export const sampleMedicalHistory: Object[] = [
+export const sampleMedicalHistory: MedicalHistory[] = [
   {
     key: "1",
     date: "2024-05-31",
@@ -62,7 +64,7 @@ export const sampleMedicalHistory: Object[] = [
   },
 ];
 
-export const sampleHistoryColumns: Object[] = [
+export const sampleHistoryColumns: Column[] = [
   {
     title: "Date",
     dataIndex: "date",
