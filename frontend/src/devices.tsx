@@ -108,12 +108,12 @@ const Devices = () => {
         />
       </div>
       <div className="backButtonContainer">
-        <Button type="primary" onClick={onBackButtonClick}>
+        <Button style={{ backgroundColor: '#6cf0fc', fontWeight: 'bold'}} type="primary" onClick={onBackButtonClick}>
           Back
         </Button>
       </div>
       <div className="backButtonContainer">
-        <Button type="primary" onClick={onCatalogButtonClick}>
+        <Button style={{ backgroundColor: '#6cf0fc', fontWeight: 'bold'}} type="primary" onClick={onCatalogButtonClick} >
           Catalog
         </Button>
       </div>

@@ -12,6 +12,7 @@ interface Device {
   serialNumber: string;
   clsRating: number;
   hospitals: { name: string; numberOfDevices: number }[];
+  url: string;
 }
 
 const Inventory: React.FC = () => {
@@ -31,6 +32,7 @@ const Inventory: React.FC = () => {
         { name: 'SGH', numberOfDevices: 5 },
         { name: 'NUH', numberOfDevices: 8 },
       ],
+      url:'/pacemaker.png'
     },
     {
       id: 2,
@@ -42,6 +44,7 @@ const Inventory: React.FC = () => {
         { name: 'NUH', numberOfDevices: 20 },
         { name: 'KTPH', numberOfDevices: 12 },
       ],
+      url:'/blood_pressure_meter.png'
     },
     {
       id: 3,
@@ -53,6 +56,7 @@ const Inventory: React.FC = () => {
         { name: 'KTPH', numberOfDevices: 15 },
         { name: 'SGH', numberOfDevices: 6 },
       ],
+      url:'/artificial_heart_valve.png'
     },
   ];
 
@@ -122,21 +126,19 @@ const Inventory: React.FC = () => {
   const navigate = useNavigate();
 
   const onBackButtonClick = () => {
-    navigate('/devices');
+    navigate('/StaffHomePage');
   };
 
   return (
     <div className="mainContainer">
       <div className="titleContainer">
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <div>Browse all inventories</div>
-          <Input
-            placeholder="Search inventory..."
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            style={{ marginLeft: '70px', width: '150px',  marginTop: '20px' }}
-          />
-        </div>
+        <div style={{ fontSize: '50px', fontWeight: 'bold' }}>Browse all inventories</div>
+        <Input
+          placeholder="Search inventory..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          style={{ width: '400px',  marginTop: '20px' }}
+        />
       </div>
       <div className="catalogContainer">
         <Table
@@ -156,7 +158,7 @@ const Inventory: React.FC = () => {
             closeIcon={false}
           >
             <div className="modalContent">
-              <img src="/logo192.png" alt="product" className="productImage" />
+              <img src={selectedDevice.url} alt="product" className="productImage" />
               <p><strong>Device Name:</strong> {selectedDevice.name}</p>
               <p><strong>Type:</strong> {selectedDevice.type}</p>
               <p><strong>Serial Number:</strong> {selectedDevice.serialNumber}</p>
@@ -173,9 +175,11 @@ const Inventory: React.FC = () => {
         )}
       </div>
       <div className="backButtonContainer">
-        <Button type="primary" onClick={onBackButtonClick}>
-          Back to my devices
-        </Button>
+      <Button
+        type="primary" onClick={onBackButtonClick} style={{ backgroundColor: '#6cf0fc', borderColor: '#6cf0fc', color: 'white', marginBottom: '10px', width: "120px",
+        height: "40px", fontWeight: "bold", }}>
+        Back
+      </Button>
       </div>
     </div>
   );

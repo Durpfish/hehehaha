@@ -1,10 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Row, Col, Card, Progress } from "antd";
+import { Row, Col, Card, Progress, Button, Typography } from "antd";
 import { Line } from "@ant-design/charts";
-import { Typography } from "antd";
 import "antd/dist/reset.css";
-import { Button } from "antd";
 
 const { Title } = Typography;
 
@@ -13,6 +11,10 @@ const StaffHomePage: React.FC = () => {
 
   const onSignOutButtonClick = () => {
     navigate("/login");
+  };
+
+  const onInventoryButtonClick = () => {
+    navigate("/inventory");
   };
 
   const data = [
@@ -41,13 +43,45 @@ const StaffHomePage: React.FC = () => {
 
   return (
     <div className="dashboardContainer" style={{ padding: "10px" }}>
-      <div className="titleContainer">
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "20px" }}>
+        <Button
+          onClick={onInventoryButtonClick}
+          style={{
+            width: "180px",
+            height: "60px",
+            backgroundColor: "#6cf0fc",
+            borderColor: "#6cf0fc",
+            color: "#fff",
+            fontSize: "18px",
+            fontWeight: "bold",
+            marginLeft: "20px",
+            marginBottom: "20px",
+          }}
+        >
+          Go to Inventory
+        </Button>
+        <Button
+          onClick={onSignOutButtonClick}
+          style={{
+            width: "180px",
+            height: "60px",
+            backgroundColor: "#6cf0fc",
+            borderColor: "#6cf0fc",
+            color: "#fff",
+            fontSize: "18px",
+            fontWeight: "bold",
+            marginRight: "20px",
+            marginBottom: "20px",
+          }}
+        >
+          Sign Out
+        </Button>
+      </div>
+      <div className="titleContainer" style={{ paddingTop: "50px" }}>
         <img src="../rawlogo.png" width="300px" />
         <div>Your dashboard</div>
       </div>
       <Row gutter={16} style={{ display: "flex", alignItems: "stretch" }}>
-        {" "}
-        {/* Adjusted this line */}
         <Col span={8}>
           <Card
             hoverable
@@ -157,13 +191,6 @@ const StaffHomePage: React.FC = () => {
           </Card>
         </Col>
       </Row>
-      <Button
-        type="primary"
-        className="signOutButton"
-        onClick={onSignOutButtonClick}
-      >
-        Sign Out
-      </Button>
     </div>
   );
 };

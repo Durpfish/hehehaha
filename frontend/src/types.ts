@@ -9,6 +9,7 @@ export interface Device {
   osVersionLatest: string; // latest available operating system version for the device
   clsRating: number; // device's classification rating
   remarks: string; // additional comments or details about the device
+  imageUrl: string; //url to unique logos for every device
 }
   
 export interface MedicalHistory {

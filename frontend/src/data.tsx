@@ -14,6 +14,7 @@ export const sampleDevices1: Device[] = [
     osVersionLatest: "1.0.1",
     clsRating: 4,
     remarks: "Critical device, requires regular monitoring.",
+    imageUrl: "/pacemaker.png",
   },
   {
     id: "2",
@@ -26,6 +27,7 @@ export const sampleDevices1: Device[] = [
     osVersionLatest: "2.6.0",
     clsRating: 2,
     remarks: "Battery issues in some units.",
+    imageUrl: "/blood_pressure_meter.png",
   },
   {
     id: "3",
@@ -38,6 +40,7 @@ export const sampleDevices1: Device[] = [
     osVersionLatest: "3.2.0",
     clsRating: 3,
     remarks: "Updated version pending approval.",
+    imageUrl: "/artificial_heart_valve.png",
   },
 ];
 
@@ -53,6 +56,7 @@ export const sampleDevices2: Device[] = [
     osVersionLatest: "1.0.1",
     clsRating: 4,
     remarks: "Critical device, requires regular monitoring.",
+    imageUrl: "/pacemaker.png",
   },
   {
     id: "2",
@@ -65,6 +69,7 @@ export const sampleDevices2: Device[] = [
     osVersionLatest: "2.6.0",
     clsRating: 2,
     remarks: "Battery issues in some units.",
+    imageUrl: "/blood_pressure_meter.png",
   },
   {
     id: "3",
@@ -77,6 +82,7 @@ export const sampleDevices2: Device[] = [
     osVersionLatest: "3.2.0",
     clsRating: 3,
     remarks: "Updated version pending approval.",
+    imageUrl: "/artificial_heart_valve.png",
   },
   {
     id: "4",
@@ -89,6 +95,7 @@ export const sampleDevices2: Device[] = [
     osVersionLatest: "1.5.5",
     clsRating: 4,
     remarks: "Recall due to software bug.",
+    imageUrl: "/insulin.png",
   },
   {
     id: "5",
@@ -101,6 +108,7 @@ export const sampleDevices2: Device[] = [
     osVersionLatest: "2.1.0",
     clsRating: 5,
     remarks: "High demand during flu season.",
+    imageUrl: "/vent.png",
   },
   {
     id: "6",
@@ -113,6 +121,7 @@ export const sampleDevices2: Device[] = [
     osVersionLatest: "4.2.0",
     clsRating: 5,
     remarks: "Frequent updates required.",
+    imageUrl: "/ct.png",
   },
   {
     id: "7",
@@ -125,6 +134,7 @@ export const sampleDevices2: Device[] = [
     osVersionLatest: "5.3.0",
     clsRating: 5,
     remarks: "High maintenance costs.",
+    imageUrl: "/mri.png",
   },
   {
     id: "8",
@@ -137,6 +147,7 @@ export const sampleDevices2: Device[] = [
     osVersionLatest: "3.6.0",
     clsRating: 3,
     remarks: "Software update to improve accuracy.",
+    imageUrl: "/glucose.png",
   },
   {
     id: "9",
@@ -149,6 +160,7 @@ export const sampleDevices2: Device[] = [
     osVersionLatest: "1.3.0",
     clsRating: 1,
     remarks: "New model coming next quarter.",
+    imageUrl: "/steth.png",
   },
   {
     id: "10",
@@ -161,6 +173,7 @@ export const sampleDevices2: Device[] = [
     osVersionLatest: "3.0.0",
     clsRating: 4,
     remarks: "Requires calibration after transport.",
+    imageUrl: "/xray.png",
   },
 ];
 
