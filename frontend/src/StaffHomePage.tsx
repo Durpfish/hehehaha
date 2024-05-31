@@ -63,7 +63,7 @@ const StaffHomePage: React.FC = () => {
           >
             <div style={{ textAlign: "center" }}>
               <div style={{ marginBottom: "20px" }}>
-                <Progress type="circle" percent={82} size={200} />
+                <Progress strokeColor="#6cf0fc" type="circle" percent={82} size={200} trailColor="" />
               </div>
             </div>
           </Card>
@@ -83,7 +83,7 @@ const StaffHomePage: React.FC = () => {
           >
             <div>
               <Title>83%</Title>
-              <Progress percent={83} />
+              <Progress strokeColor="#6cf0fc" percent={83} />
             </div>
           </Card>
         </Col>
@@ -159,10 +159,10 @@ const StaffHomePage: React.FC = () => {
       </Row>
       <Button
         type="primary"
-        className="customButton"
+        className="signOutButton"
         onClick={onSignOutButtonClick}
       >
-        My Devices
+        Sign Out
       </Button>
     </div>
   );

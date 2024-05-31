@@ -61,7 +61,7 @@ const Login = () => {
   return (
     <div className={'mainContainer'}>
       <div className={'titleContainer'}>
-        <div>Login</div>
+        <img src="../rawlogo.png" width="500px" />
       </div>
       <br />
       <div className={'inputContainer'}>
