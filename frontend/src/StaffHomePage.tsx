@@ -44,7 +44,7 @@ const StaffHomePage: React.FC = () => {
   return (
     <div className="dashboardContainer" style={{ padding: "10px" }}>
       <div className="titleContainer">
-        <img src="../rawlogo.png" width="300px"></img>
+        <img src="../rawlogo.png" width="300px"/>
         <div>Your dashboard</div>
       </div>
       <Row gutter={16} style={{ display: 'flex', alignItems: 'stretch' }}> {/* Adjusted this line */}
@@ -61,7 +61,7 @@ const StaffHomePage: React.FC = () => {
         <Col span={8}>
           <Card title="Compliance Status" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
             <div>
-              <h1>73%</h1>
+              <h1>83%</h1>
               <Progress percent={83} />
             </div>
           </Card>
