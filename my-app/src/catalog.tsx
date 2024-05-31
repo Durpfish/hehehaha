@@ -4,26 +4,15 @@ import { Table, Modal, Button } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import 'antd/dist/reset.css';
 import './catalog.css';
-
-interface Device {
-  id: number;
-  name: string;
-  brand: string;
-  type: string;
-  serialNumber: string;
-  clsRating: number;
-}
+import { Device } from "./types";
+import { sampleDevices2 } from './data';
 
 const Catalog: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedDevice, setSelectedDevice] = useState<Device | null>(null);
 
-  const devices: Device[] = [
-    { id: 1, name: 'Pacemaker', brand: 'Brand A', type: 'Type A', serialNumber: 'SN001', clsRating: 4 },
-    { id: 2, name: 'Blood Pressure Meter', brand: 'Brand B', type: 'Type B', serialNumber: 'SN002', clsRating: 2 },
-    { id: 3, name: 'Artificial Heart Valve', brand: 'Brand C', type: 'Type C', serialNumber: 'SN003', clsRating: 3 },
-  ];
-
+  const devices = sampleDevices2;
+  
   const columns: ColumnsType<Device> = [
     {
       title: 'Icon',

@@ -6,7 +6,7 @@ export interface Device {
     serialNumber: string;
     clsRating: number;
   }
-
+  
 export interface MedicalHistory {
     key: string;
     date: string;
