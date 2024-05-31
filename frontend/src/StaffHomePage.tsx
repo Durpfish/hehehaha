@@ -2,7 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Row, Col, Card, Progress } from "antd";
 import { Line } from "@ant-design/charts";
+import { Typography } from 'antd';
 import "antd/dist/reset.css";
+
+const { Title } = Typography; 
 
 const StaffHomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -44,51 +47,118 @@ const StaffHomePage: React.FC = () => {
   return (
     <div className="dashboardContainer" style={{ padding: "10px" }}>
       <div className="titleContainer">
-        <img src="../rawlogo.png" width="300px"/>
+        <img src="../rawlogo.png" width="300px" />
         <div>Your dashboard</div>
       </div>
-      <Row gutter={16} style={{ display: 'flex', alignItems: 'stretch' }}> {/* Adjusted this line */}
+      <Row gutter={16} style={{ display: "flex", alignItems: "stretch" }}>
+        {" "}
+        {/* Adjusted this line */}
         <Col span={8}>
-          <Card title="Risk Score" style={{ display: "flex", flexDirection: "column", height: "100%" }}> 
+          <Card
+            hoverable
+            title="Risk Score"
+            style={  {
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
             <div style={{ textAlign: "center" }}>
-              <h1>82</h1>
               <div style={{ marginBottom: "20px" }}>
-                <Progress type="circle" percent={82} size={100} />
+                <Progress type="circle" percent={82} size={200} />
               </div>
             </div>
           </Card>
         </Col>
         <Col span={8}>
-          <Card title="Compliance Status" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+          <Card
+            hoverable
+            title="Compliance Status"
+            style={  {
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
             <div>
-              <h1>83%</h1>
+              <Title>83%</Title>
               <Progress percent={83} />
             </div>
           </Card>
         </Col>
         <Col span={8}>
-          <Card title="Risk History">
+          <Card
+            hoverable
+            title="Risk History"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
             <Line {...config} />
           </Card>
         </Col>
       </Row>
       <Row gutter={16} style={{ marginTop: "20px" }}>
         <Col span={8}>
-          <Card title="Outdated OS">
-            <h1>43</h1>
-            <p>devices</p>
+          <Card
+            hoverable
+            title="Outdated OS"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
+            <Title>43</Title>
+            <Title level={2}>devices</Title>
           </Card>
         </Col>
         <Col span={8}>
-          <Card title="Known vulnerabilities">
-            <h1>23</h1>
-            <p>devices</p>
+          <Card
+            hoverable
+            title="Known vulnerabilities"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
+            <Title>23</Title>
+            <Title level={2}>devices</Title>
           </Card>
         </Col>
         <Col span={8}>
-          <Card title="Last Security Audit">
-            <h1>21</h1>
-            <p>days ago</p>
+          <Card
+            hoverable
+            title="Last Security Audit"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              borderColor: "#a0a0a0a0",
+              borderWidth: "2px",
+              borderStyle: "solid",
+            }}
+          >
+            <Title>21</Title>
+            <Title level={2}>days ago</Title>
           </Card>
         </Col>
       </Row>
