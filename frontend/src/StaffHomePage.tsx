@@ -44,12 +44,12 @@ const StaffHomePage: React.FC = () => {
   return (
     <div className="dashboardContainer" style={{ padding: "10px" }}>
       <div className="titleContainer">
-        <img src="../rawlogo.png" width="300px"></img>
+        <img src="../rawlogo.png" width="300px"/>
         <div>Your dashboard</div>
       </div>
       <Row gutter={16} style={{ display: 'flex', alignItems: 'stretch' }}> {/* Adjusted this line */}
         <Col span={8}>
-          <Card title="Risk Score" style={{ display: "flex", flexDirection: "column", justifyContent: "center", height: "100%" }}> 
+          <Card title="Risk Score" style={{ display: "flex", flexDirection: "column", height: "100%" }}> 
             <div style={{ textAlign: "center" }}>
               <h1>82</h1>
               <div style={{ marginBottom: "20px" }}>
@@ -59,9 +59,9 @@ const StaffHomePage: React.FC = () => {
           </Card>
         </Col>
         <Col span={8}>
-          <Card title="Compliance Status" style={{ display: "flex", flexDirection: "column", justifyContent: "center", height: "100%" }}>
+          <Card title="Compliance Status" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
             <div>
-              <h1>73%</h1>
+              <h1>83%</h1>
               <Progress percent={83} />
             </div>
           </Card>
