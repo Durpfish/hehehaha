@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  position: relative; /* Ensure the container is positioned relatively */
+  position: relative;
 }
 
 .titleContainer {

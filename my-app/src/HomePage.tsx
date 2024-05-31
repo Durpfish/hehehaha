@@ -13,7 +13,6 @@ const HomePage: React.FC = () => {
   const onDevicesButtonClick = () => {
     navigate('/devices');
   };
-
   const onSignOutButtonClick = () => {
     navigate('/login');
   };

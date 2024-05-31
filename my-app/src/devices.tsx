@@ -11,6 +11,10 @@ const Devices = () => {
     navigate('/HomePage');
   }
 
+  const onCatalogButtonClick = () => {
+    navigate('/catalog');
+  }
+
   // TODO add backend
   const devices = [
     { id: 1, name: 'Pacemaker', brand: 'Brand A', type: 'Type A', serialNumber: 'SN001', clsRating: 4 },
@@ -42,6 +46,11 @@ const Devices = () => {
       <div className="backButtonContainer">
         <Button type="primary" onClick={onBackButtonClick}>
           Back
+        </Button>
+      </div>
+      <div className="backButtonContainer">
+        <Button type="primary" onClick={onCatalogButtonClick}>
+          Catalog
         </Button>
       </div>
     </div>

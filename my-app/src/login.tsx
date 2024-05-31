@@ -15,11 +15,9 @@ const Login = () => {
     const hardcodedUsername = 'user123';
     const hardcodedPassword = 'password123';
 
-    // Set initial error values to empty
     setUsernameError('');
     setPasswordError('');
 
-    // Check if the user has entered both fields correctly
     if (username === '') {
       setUsernameError('Please enter your username');
       return;
@@ -30,7 +28,6 @@ const Login = () => {
       return;
     }
 
-    // Validate hardcoded credentials
     if (username !== hardcodedUsername) {
       setUsernameError('Invalid username');
       return;

@@ -65,7 +65,7 @@ const History = () => {
         <div>My Medical Records</div>
       </div>
       <div className={'tableContainer'}>
-        <div style={{ width: '800px' }}> {/* Set the width of the container */}
+        <div style={{ width: '800px' }}> {}
           <Table
             dataSource={medicalHistory}
             columns={columns}
