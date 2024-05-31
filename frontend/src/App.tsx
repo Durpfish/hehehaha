@@ -4,9 +4,8 @@ import HomePage from './HomePage'; // records, devices
 import Devices from './devices'; // list of my devices, clicking on device brings to /item/<id> modal
 import StaffHomePage from './StaffHomePage';
 import Catalog from './catalog'; // rank devices on CLS security labelling, need to classify devices
-//import Records from './records'; // doctor access history (can be modal)
 //import Inventory from './inventory'; // same as /devices, clicking on inventory item opens modal for item <id>
-import History from './history';
+import History from './history'; // doctor access history (can be modal)
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
