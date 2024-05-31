@@ -1,20 +1,96 @@
 import React, { useState, useEffect } from 'react';
 import fetchData from './utils/fetchData';
 import { useNavigate } from 'react-router-dom';
-import { Table, Modal, Button } from 'antd';
+import { Select, Modal, Button, Row } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import 'antd/dist/reset.css';
 import './catalog.css';
 import { Device } from "./types";
+import DeviceCard from "./device-card";
+
+const { Option } = Select;
 
 const Catalog: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedDevice, setSelectedDevice] = useState<Device | null>(null);
   const [loading, setLoading] = useState(false);
   const [catalog, setCatalog] = useState<Device[]>([]);
+  const [filteredCatalog, setFilteredCatalog] = useState<Device[]>([]);
+
+  // Sample data
+  const sampleData: Device[] = [
+    {
+      id: '1',
+      serialNumber: 'SN001',
+      name: 'Pacemaker',
+      brand: 'Brand A',
+      vendor: 'Vendor A',
+      type: 'Type A',
+      osVersionCurrent: '1.0.0',
+      osVersionLatest: '1.0.1',
+      clsRating: 4,
+      remarks: 'Critical device, requires regular monitoring.',
+      //isCatalog: true,
+    },
+    {
+      id: '2',
+      serialNumber: 'SN002',
+      name: 'Blood Pressure Meter',
+      brand: 'Brand B',
+      vendor: 'Vendor B',
+      type: 'Type B',
+      osVersionCurrent: '2.5.3',
+      osVersionLatest: '2.6.0',
+      clsRating: 3,
+      remarks: 'Battery issues in some units.',
+      //isCatalog: true,
+    },
+    {
+      id: '3',
+      serialNumber: 'SN003',
+      name: 'Artificial Heart Valve',
+      brand: 'Brand C',
+      vendor: 'Vendor C',
+      type: 'Type C',
+      osVersionCurrent: '3.1.2',
+      osVersionLatest: '3.2.0',
+      clsRating: 4,
+      remarks: 'Updated version pending approval.',
+      //isCatalog: true,
+    },
+    {
+      id: '4',
+      serialNumber: 'SN004',
+      name: 'Insulin Pump',
+      brand: 'Brand D',
+      vendor: 'Vendor D',
+      type: 'Type D',
+      osVersionCurrent: '1.5.0',
+      osVersionLatest: '1.5.5',
+      clsRating: 1,
+      remarks: 'Recall due to software bug.',
+      //isCatalog: true,
+    },
+    {
+      id: '5',
+      serialNumber: 'SN005',
+      name: 'Ventilator',
+      brand: 'Brand E',
+      vendor: 'Vendor E',
+      type: 'Type E',
+      osVersionCurrent: '2.0.0',
+      osVersionLatest: '2.1.0',
+      clsRating: 4,
+      remarks: 'High demand during flu season.',
+      //isCatalog: true,
+    },
+  ];
 
   useEffect(() => {
     fetchData("/catalog", setCatalog, setLoading)
+    setCatalog(sampleData);
+    setFilteredCatalog(sampleData);
+    setLoading(false);
   }, []);
   
   const columns: ColumnsType<Device> = [
@@ -62,9 +138,28 @@ const Catalog: React.FC = () => {
     setIsModalVisible(true);
   };
 
+  const handleCardClick = (device: Device) => {
+    setSelectedDevice(device);
+    setIsModalVisible(true);
+  };
+
   const handleOk = () => {
     setIsModalVisible(false);
   };
+
+  const handleFilterChange = (filters: Record<string, any | null>) => {
+    let filteredData = [...catalog];
+
+    if (filters.name && filters.name.length > 0) {
+      filteredData = filteredData.filter(device => filters.name?.includes(device.name));
+    }
+    if (filters.brand && filters.brand.length > 0) {
+      filteredData = filteredData.filter(device => filters.brand?.includes(device.brand));
+    }
+
+    setFilteredCatalog(filteredData);
+  };
+
 
   const navigate = useNavigate();
 
@@ -72,6 +167,8 @@ const Catalog: React.FC = () => {
     navigate('/devices');
   }
 
+  const uniqueNames = Array.from(new Set(catalog.map(device => device.name)));
+  const uniqueBrands = Array.from(new Set(catalog.map(device => device.brand)));
 
   return (
     <div className="mainContainer">
@@ -79,15 +176,39 @@ const Catalog: React.FC = () => {
         <div>Browse all devices</div>
       </div>
       <div className="catalogContainer">
-        <Table
-          columns={columns}
-          dataSource={catalog}
-          loading={loading}
-          rowKey="id"
-          onRow={(record) => ({
-            onClick: () => handleRowClick(record),
-          })}
-        />
+      <div className="filterContainer">
+        <Select
+          mode="multiple"
+          allowClear
+          placeholder="Filter by Name"
+          style={{ width: 200, marginRight: 16 }}
+          onChange={(value) => handleFilterChange({ name: value })}
+        >
+          {uniqueNames.map(name => (
+            <Option key={name} value={name}>{name}</Option>
+          ))}
+        </Select>
+        <Select
+          mode="multiple"
+          allowClear
+          placeholder="Filter by Brand"
+          style={{ width: 200 }}
+          onChange={(value) => handleFilterChange({ brand: value })}
+        >
+          {uniqueBrands.map(brand => (
+            <Option key={brand} value={brand}>{brand}</Option>
+          ))}
+        </Select>
+      </div>
+        <Row gutter={[40, 16]} className="products-row">
+          {filteredCatalog.map(device => (
+            <DeviceCard
+              key={device.id}
+              device={device}
+              onClick={() => handleCardClick(device)}
+            />
+          ))}
+        </Row>
         {selectedDevice && (
           <Modal
             title="Device Details"
