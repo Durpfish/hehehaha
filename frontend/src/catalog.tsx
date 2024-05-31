@@ -18,81 +18,8 @@ const Catalog: React.FC = () => {
   const [catalog, setCatalog] = useState<Device[]>([]);
   const [filteredCatalog, setFilteredCatalog] = useState<Device[]>([]);
 
-  // Sample data
-  /*
-  const sampleData: Device[] = [
-    {
-      id: '1',
-      serialNumber: 'SN001',
-      name: 'Pacemaker',
-      brand: 'Brand A',
-      vendor: 'Vendor A',
-      type: 'Type A',
-      osVersionCurrent: '1.0.0',
-      osVersionLatest: '1.0.1',
-      clsRating: 4,
-      remarks: 'Critical device, requires regular monitoring.',
-      //isCatalog: true,
-    },
-    {
-      id: '2',
-      serialNumber: 'SN002',
-      name: 'Blood Pressure Meter',
-      brand: 'Brand B',
-      vendor: 'Vendor B',
-      type: 'Type B',
-      osVersionCurrent: '2.5.3',
-      osVersionLatest: '2.6.0',
-      clsRating: 3,
-      remarks: 'Battery issues in some units.',
-      //isCatalog: true,
-    },
-    {
-      id: '3',
-      serialNumber: 'SN003',
-      name: 'Artificial Heart Valve',
-      brand: 'Brand C',
-      vendor: 'Vendor C',
-      type: 'Type C',
-      osVersionCurrent: '3.1.2',
-      osVersionLatest: '3.2.0',
-      clsRating: 4,
-      remarks: 'Updated version pending approval.',
-      //isCatalog: true,
-    },
-    {
-      id: '4',
-      serialNumber: 'SN004',
-      name: 'Insulin Pump',
-      brand: 'Brand D',
-      vendor: 'Vendor D',
-      type: 'Type D',
-      osVersionCurrent: '1.5.0',
-      osVersionLatest: '1.5.5',
-      clsRating: 1,
-      remarks: 'Recall due to software bug.',
-      //isCatalog: true,
-    },
-    {
-      id: '5',
-      serialNumber: 'SN005',
-      name: 'Ventilator',
-      brand: 'Brand E',
-      vendor: 'Vendor E',
-      type: 'Type E',
-      osVersionCurrent: '2.0.0',
-      osVersionLatest: '2.1.0',
-      clsRating: 4,
-      remarks: 'High demand during flu season.',
-      //isCatalog: true,
-    },
-  ];
-  */
-
   useEffect(() => {
     // fetchData("/catalog", setCatalog, setLoading)
-    //setCatalog(sampleData);
-    //setFilteredCatalog(sampleData);
     setLoading(false);
     setCatalog(sampleDevices2);
     setFilteredCatalog(sampleDevices2);
@@ -138,13 +65,6 @@ const Catalog: React.FC = () => {
       defaultSortOrder: 'ascend' as 'ascend',
     },
   ];
-  */
-
-  /*
-  const handleRowClick = (record: Device) => {
-    setSelectedDevice(record);
-    setIsModalVisible(true);
-  };
   */
 
   const handleCardClick = (device: Device) => {
