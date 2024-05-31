@@ -1,5 +1,11 @@
-# Setup
+# Initialise DB
+./migrate.sh
 
+# Setup Verification
 brew install postgresql
 brew services start postgresql
 psql postgres
+
+# Remove DB
+psql postgres
+DROP DATABASE synergy_prod;
