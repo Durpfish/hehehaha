@@ -13,7 +13,7 @@ const Login = () => {
 
   const onUserLoginClick = () => {
     // Hardcoded user credentials
-    const hardcodedUser = { username: 'user', password: 'password' };
+    const hardcodedUser = { username:  'user', password: 'password' };
 
     setUsernameError('');
     setPasswordError('');
