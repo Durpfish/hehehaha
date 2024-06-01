@@ -110,7 +110,7 @@ const Catalog: React.FC = () => {
         )}
       </div>
       <div className="backButtonContainer">
-        <Button style={{ backgroundColor: '#6cf0fc', fontWeight: 'bold'}} type="primary" onClick={onBackButtonClick}>
+        <Button style={{ backgroundColor: '#2143d7', fontWeight: 'bold'}} type="primary" onClick={onBackButtonClick}>
           Back to my devices
         </Button>
       </div>

@@ -24,7 +24,7 @@ const Inventory: React.FC = () => {
     {
       id: 1,
       name: 'Pacemaker',
-      type: 'Type A',
+      type: 'Cardiology',
       serialNumber: 'SN001',
       clsRating: 4,
       hospitals: [
@@ -37,7 +37,7 @@ const Inventory: React.FC = () => {
     {
       id: 2,
       name: 'Blood Pressure Meter',
-      type: 'Type B',
+      type: 'Cardiology',
       serialNumber: 'SN003',
       clsRating: 2,
       hospitals: [
@@ -49,7 +49,7 @@ const Inventory: React.FC = () => {
     {
       id: 3,
       name: 'Artificial Heart Valve',
-      type: 'Type C',
+      type: 'Cardiology',
       serialNumber: 'SN004',
       clsRating: 3,
       hospitals: [
@@ -88,6 +88,18 @@ const Inventory: React.FC = () => {
       title: 'Device Name',
       dataIndex: 'name',
       key: 'name',
+      render: (name: string, record: Device) => {
+        return record.hospitals.map((hospital, index) => (
+          <div key={index}>
+            {index === 0 && name}
+          </div>
+        ));
+      },
+    },
+    {
+      title: 'Department',
+      dataIndex: 'type',
+      key: 'type',
       render: (name: string, record: Device) => {
         return record.hospitals.map((hospital, index) => (
           <div key={index}>
@@ -176,7 +188,7 @@ const Inventory: React.FC = () => {
       </div>
       <div className="backButtonContainer">
       <Button
-        type="primary" onClick={onBackButtonClick} style={{ backgroundColor: '#6cf0fc', borderColor: '#6cf0fc', color: 'white', marginBottom: '10px', width: "120px",
+        type="primary" onClick={onBackButtonClick} style={{ backgroundColor: '#2143d7', borderColor: '#2143d7', color: 'white', marginBottom: '10px', width: "120px",
         height: "40px", fontWeight: "bold", }}>
         Back
       </Button>
