@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
         <Col>
           <div className="titleContainer">
             <img src = "../rawlogo.png" width = "300px"></img>
-            <h1 className="welcomeMessage">Welcome, user123!</h1>
+            <h1 className="welcomeMessage">Welcome, Wei Xuan!</h1>
           </div>
         </Col>
         <Col>

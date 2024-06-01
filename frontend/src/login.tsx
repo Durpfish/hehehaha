@@ -13,7 +13,7 @@ const Login = () => {
 
   const onUserLoginClick = () => {
     // Hardcoded user credentials
-    const hardcodedUser = { username: 'user123', password: 'password123' };
+    const hardcodedUser = { username:  'user', password: 'password' };
 
     setUsernameError('');
     setPasswordError('');
@@ -36,7 +36,7 @@ const Login = () => {
   };
 
   const onStaffLoginClick = () => {
-    const hardcodedStaff = { username: 'staff123', password: 'staffpass123' };
+    const hardcodedStaff = { username: 'admin', password: 'admin' };
 
     setUsernameError('');
     setPasswordError('');
@@ -61,7 +61,7 @@ const Login = () => {
   return (
     <div className={'mainContainer'}>
       <div className={'titleContainer'}>
-        <div>Login</div>
+        <img src="../rawlogo.png" width="500px" />
       </div>
       <br />
       <div className={'inputContainer'}>

@@ -31,7 +31,7 @@ const Catalog: React.FC = () => {
       title: 'Icon',
       dataIndex: 'icon',
       key: 'icon',
-      render: () => <img src="/logo192.png" alt="icon" className="tableIcon" />,
+      render: (_, record) => <img src={record.imageUrl} alt="icon" className="tableIcon" />,
     },
     {
       title: 'Name',
@@ -147,7 +147,7 @@ const Catalog: React.FC = () => {
             closeIcon={false}
           >
             <div className="modalContent">
-              <img src="/logo192.png" alt="product" className="productImage" />
+              <img src={selectedDevice.imageUrl} alt="product" className="productImage" />
               <p><strong>Name:</strong> {selectedDevice.name}</p>
               <p><strong>Brand:</strong> {selectedDevice.brand}</p>
               <p><strong>Type:</strong> {selectedDevice.type}</p>
@@ -158,7 +158,7 @@ const Catalog: React.FC = () => {
         )}
       </div>
       <div className="backButtonContainer">
-        <Button type="primary" onClick={onBackButtonClick}>
+        <Button style={{ backgroundColor: '#2143d7', fontWeight: 'bold'}} type="primary" onClick={onBackButtonClick}>
           Back to my devices
         </Button>
       </div>

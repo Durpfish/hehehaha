@@ -15,9 +15,8 @@
   
   .welcomeMessage {
     font-size: 56px;
+    color: #2143d7;
   }
-
-
   
   .buttonContainer {
     display: flex;
@@ -26,7 +25,7 @@
   }
   
   .customButton {
-    background-color: #6cf0fc;
+    background-color: #2143d7;
     color: white;
     font-weight: bold;
     width: 300px;
@@ -44,7 +43,7 @@
   }
   
   .signOutButton {
-    background-color: #6cf0fc;
+    background-color: #2143d7;
     font-weight: bold;
     position: absolute;
     top: 20px;
