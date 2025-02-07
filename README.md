@@ -28,3 +28,6 @@ Healthcare institutions can also benefit from Synergy as insights to macro-level
 We used a React frontend with TypeScript. We opted for a PostgreSQL backend with TypeScript as well, but also included hardcoded examples for demonstration and for anyone who wants to quickly try out Synergy without setting up the database.
 
 Some libraries we used include AntDesign and Material UI.
+
+## Pitch Deck
+https://www.canva.com/design/DAGGuHS1Nqo/Ch3qFii6kn593YNxaPPanA/edit?utm_content=DAGGuHS1Nqo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
